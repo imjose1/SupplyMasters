@@ -1,0 +1,88 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+/*-----------------------main page ------------------------*/
+.mainPage {
+    text-align: center;
+    margin-left: 20%;
+    margin-top: 79px;
+}
+.homeImage {
+    margin-left: 48%;
+    height: 401px;
+}
+
+/*-------------------------- inventory page ----------------------*/
+/*-------------------- Side Menu -------------*/
+.inventoryPage {
+    max-width: 100%;
+}
+.sideNav {
+    padding-top: 30px;
+}
+
+.sideNavSection {
+    text-align: center;
+}
+/*--------------------- Center menu ----------*/
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+.header-left {
+    flex: 1;
+}
+
+.header-title {
+    margin: 0;
+    font-size: 28px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.profile-image {
+    height: 80px;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+.profile-name {
+    margin: 0;
+    font-size: 24px;
+}
+
+.btn {
+    margin-bottom: 20px;
+}
+
+/*-------------------- main body --------------*/
+.table {
+    background-color: #eeeeee;
+}

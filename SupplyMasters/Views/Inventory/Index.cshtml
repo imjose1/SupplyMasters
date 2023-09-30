@@ -1,0 +1,106 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="container-fluid inventoryPage">
+    <div class="row">
+        <!-- Navigation Bar (15% width) -->
+        <div class="col-md-2 bg-dark" style="height: 100vh; padding: 0;">
+            <div class="navbar-brand text-center sideNav">
+                <h2 style="color: white;">Company Name</h2>
+            </div>
+            <div class="sideNavSection">
+                <ul class="navbar-nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#bar-section">Bar Section</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#seafood-section">kitchen Section</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#seafood-section">Cleaning Supplies Section</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+
+        <!-- Table Area (80% width) -->
+        <div class="col-md-10" style="padding: 20px;">
+            <div class="header-section">
+                <div class="header-left">
+                    <h1 class="header-title" style="font-weight: bold; font-size: 36px;">Monday Stock Tracking</h1>
+                </div>
+                <div class="header-right">
+                    <img class="profile-image" src="https://newprofilepic.photo-cdn.net//assets/images/article/profile.jpg?5315ffb" alt="Profile Image">
+                    <h2 class="profile-name">Pamela Chu</h2>
+                </div>
+            </div>
+            <button id="addButton" class="btn btn-success" style="padding: 10px 20px; border-radius: 5px; font-size: 16px;">Add Product</button>
+            <table class="table" id="inventoryTable">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Sizes</th>
+                        <th scope="col">Images</th>
+                        <th scope="col">Order Treshold</th>
+                        <th scope="col">Order Quantity</th>
+                        <th scope="col">date</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows will be dynamically added here using JavaScript -->
+
+                </tbody>
+            </table>
+            <div id="inputForm" style="display: none;background-color: #eaeaea;">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div style="display: flex; align-items: center;">
+                            <input id="productName" type="text" class="form-control" placeholder="Product Name" style="flex: 1; margin-right: 10px;">
+                            <input id="productSize" type="text" class="form-control" placeholder="Product Size" style="flex: 1; margin-right: 10px;">
+                            <input id="productImage" type="text" class="form-control" placeholder="Product Image" style="flex: 2; margin-right: 10px;">
+                            <input id="orderThreshold" type="number" class="form-control" placeholder="Order Threshold" style="flex: 1; margin-right: 10px;">
+                            <input id="orderQuantity" type="number" class="form-control" placeholder="Order Quantity" style="flex: 1; margin-right: 10px;">
+                            <input id="productDate" type="text" class="form-control" placeholder="Date" style="flex: 1; margin-right: 10px;">
+                            <button id="confirmButton" class="btn btn-primary">Add Product</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById("addButton").addEventListener("click", function () {
+        document.getElementById("inputForm").style.display = "block";
+    });
+
+    document.getElementById("confirmButton").addEventListener("click", function () {
+        var productName = document.getElementById("productName").value;
+        var productSize = document.getElementById("productSize").value;
+        var productImage = document.getElementById("productImage").value;
+        var orderThreshold = document.getElementById("orderThreshold").value;
+        var orderQuantity = document.getElementById("orderQuantity").value;
+        var productDate = document.getElementById("productDate").value;
+
+        var newRow = document.createElement("tr");
+        newRow.innerHTML = `
+                <td>${productName}</td>
+                <td>${productSize}</td>
+                 <td><img src="${productImage}" alt="Product Image" width="50"></td>
+                <td>${orderThreshold}</td>
+                <td>${orderQuantity}</td>
+                <td>${productDate}</td>
+                <td></td>
+            `;
+
+        document.getElementById("inventoryTable").getElementsByTagName('tbody')[0].appendChild(newRow);
+        document.getElementById("inputForm").style.display = "none";
+    });
+</script>
